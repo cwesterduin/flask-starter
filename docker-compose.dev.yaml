@@ -12,7 +12,7 @@ services:
         - NODE_ENV=development
       depends_on:
         - db
-      command: bash -c "pyenv run app"
+      command: bash -c "FLASK_APP=app.py && python -m pip install -r requirements.txt  && python -m flask run"
   
     db:
       container_name: dev_db
